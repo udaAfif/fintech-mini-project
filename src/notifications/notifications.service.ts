@@ -7,7 +7,7 @@ export class NotificationsService {
     try {
       const url =
         process.env.NOTIFICATION_URL ||
-        "https://webhook.site/5dfcf653-d1b0-4a60-93d5-735538aaf892";
+        "https://webhook.site/49f0255b-e2b7-46e8-b360-df3b48611b27";
 
       const { data } = await axios.post(
         url,
@@ -16,7 +16,7 @@ export class NotificationsService {
           message: `Transaction update: ${JSON.stringify(payload)}`,
         },
         {
-          timeout: 10000,
+          timeout: 30000,
         }
       );
 

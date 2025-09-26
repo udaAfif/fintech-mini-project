@@ -82,6 +82,38 @@
   - Komunikasi eksternal dilakukan via service di NestJS.  
   - Response dari layanan eksternal bisa disimpan di database sebagai audit trail.  
 
+## 4) Testing & Dokumentasi
+- **Unit Test**  
+Project ini menggunakan Jest (default dari NestJS) untuk unit testing.
+Sudah tersedia contoh unit test untuk minimal 2 endpoint:
+
+1 CustomersController
+ - Test POST /customers untuk membuat nasabah baru.
+ - Test GET /customers/:id untuk mendapatkan nasabah berdasarkan id.
+
+2. TransactionsController
+ - Test POST /transactions untuk membuat transaksi (mock payment gateway).
+ - Test GET /transactions/:id untuk validasi pengambilan transaksi.
+
+ Cara menjalankan test:
+  ```bash
+  npm run test
+  ```
+
+- **API Documentation** 
+Untuk dokumentasi API, project ini sudah terintegrasi dengan Swagger (OpenAPI) menggunakan @nestjs/swagger.
+1. Dokumentasi otomatis tersedia di endpoint:
+http://localhost:3000/api-docs
+
+2. Swagger akan memuat seluruh endpoint (/customers, /transactions, dll) lengkap dengan:
+- Parameter input (DTO dengan validasi).
+- Contoh payload.
+
+Cara akses:
+1. Jalankan server (docker-compose up -d).
+2. Buka browser: http://localhost:3000/api-docs
+
+
 ---
 
 ## Step-by-step Install MongoDB (Local Development)
