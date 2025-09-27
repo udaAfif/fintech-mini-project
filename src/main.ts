@@ -13,9 +13,6 @@ async function bootstrap() {
       "API documentation for Customers, Transactions, and Payments"
     )
     .setVersion("1.0")
-    .addTag("customers")
-    .addTag("transactions")
-    .addTag("payments")
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

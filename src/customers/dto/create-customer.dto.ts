@@ -1,18 +1,3 @@
-// import { IsEmail, IsString, IsOptional, IsNumber } from "class-validator";
-
-// export class CreateCustomerDto {
-//   @IsEmail()
-//   email: string;
-
-//   @IsString()
-//   name: string;
-
-//   @IsOptional()
-//   @IsNumber()
-//   balance?: number;
-// }
-
-// src/customers/dto/create-customer.dto.ts
 import {
   IsEmail,
   IsOptional,
@@ -32,7 +17,7 @@ export class CreateCustomerDto {
   name: string;
 
   @ApiProperty({
-    example: "akbar@example.com",
+    example: "afif@mail.com",
     description: "Email customer",
   })
   @IsNotEmpty()

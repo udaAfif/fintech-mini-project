@@ -113,6 +113,37 @@ Cara akses:
 1. Jalankan server (docker-compose up -d).
 2. Buka browser: http://localhost:3000/api-docs
 
+## 5) CI/CD Pipeline (GitHub Actions)
+
+Project ini sudah dilengkapi dengan pipeline **CI/CD** menggunakan GitHub Actions.
+
+- **Trigger**
+  Workflow akan jalan otomatis setiap ada:
+  - Push ke branch `main`
+  - Pull request ke branch `main`
+
+- **Jobs**
+  1. **Unit Test** → menjalankan Jest untuk semua test.  
+  2. **Build** → memastikan project bisa dikompilasi.  
+  3. **(Optional Deploy)** → bisa ditambahkan sesuai kebutuhan server.  
+
+- **File Workflow**
+  Konfigurasi workflow ada di:
+  ```
+  .github/workflows/ci-cd.yml
+  ```
+- **Alur CI/CD**
+  1. Developer melakukan push/merge ke branch `main`.  
+  2. GitHub Actions menjalankan pipeline: test → build → deploy.  
+  3. Jika semua langkah sukses, aplikasi akan otomatis jalan di server target.  
+
+- **Platform Deployment: Render**
+  - **Alasan Memilih Render:**
+    1. Render mendukung **Docker-based deployment** sehingga cocok dengan setup project ini.  
+    2. Integrasi langsung dengan GitHub repository → setiap push ke `main` bisa trigger auto-deploy.  
+    3. Tersedia free tier untuk aplikasi kecil, sehingga cost-efficient.  
+    4. Simpel untuk setup, tidak perlu konfigurasi server manual seperti di VPS.  
+    5. Mendukung **scaling otomatis** jika trafik meningkat.  
 
 ---
 

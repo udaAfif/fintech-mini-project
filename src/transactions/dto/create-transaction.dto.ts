@@ -1,24 +1,3 @@
-// import { IsNumber, IsString, IsOptional } from "class-validator";
-
-// export class CreateTransactionDto {
-//   @IsString()
-//   customerId: string;
-
-//   @IsNumber()
-//   amount: number;
-
-//   @IsString()
-//   type: "debit" | "credit";
-
-//   @IsOptional()
-//   @IsString()
-//   idempotencyKey?: string;
-
-//   @IsOptional()
-//   metadata?: Record<string, any>;
-// }
-
-// src/transactions/dto/create-transaction.dto.ts
 import { IsNumber, IsString, IsOptional, IsIn } from "class-validator";
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 
