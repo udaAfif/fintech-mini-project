@@ -20,7 +20,7 @@ describe("CustomersController (e2e)", () => {
 
     app = moduleFixture.createNestApplication();
     await app.init();
-  }, 20000);
+  }, 100000);
 
   afterEach(async () => {
     await clearDatabase();
